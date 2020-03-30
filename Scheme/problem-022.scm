@@ -1,0 +1,38 @@
+#|
+Problem 22
+|#
+
+(import (chicken format) (chicken io) (chicken sort) (chicken string) srfi-1)
+
+(define (score-char char)
+  (if (char=? char #\")
+      0
+      (add1 (- (char->integer char)
+               (char->integer #\A)))))
+
+(define (score-string str)
+  (let [(ip (open-input-string str))]
+    (let loop [(score 0)
+               (char (read-char ip))]
+      (if (eof-object? char)
+          score
+          (loop (+ score (score-char char)) (read-char ip))))))
+
+(define answer-022
+  (let* [(ip (open-input-file "p022_names.txt"))
+         (str (read-line ip))
+         (sorted-names (sort (string-split str "\",") string<=?))]
+    (let loop [(remaining-names sorted-names)
+               (cummulative-score 0)
+               (name-index 1)]
+      (if (null? remaining-names)
+          cummulative-score
+          (loop (cdr remaining-names)
+                (+ cummulative-score (* name-index
+                                        (score-string (car remaining-names))))
+                (add1 name-index))))))
+
+(define (main)
+  (display (format "Problem 22 answer: ~a~%" answer-022)))
+
+(main)
