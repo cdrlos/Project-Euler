@@ -1,10 +1,8 @@
 #|
 Maximum path sum I
 
-Problem 18 
+Problem 18
 |#
-
-(import (chicken format) matchable srfi-1)
 
 (define (string->integer str)
   (let ((s (open-input-string str)))
