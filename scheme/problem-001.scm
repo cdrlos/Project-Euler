@@ -8,7 +8,7 @@ Find the sum of all the multiples of 3 or 5 below 1000.
 |#
 ;; Answer: 233168
 
-(import (chicken format) matchable srfi-1)
+(import (kawa regex))
 
 (define (range . args)
   (define (range-tail start stop step collect)

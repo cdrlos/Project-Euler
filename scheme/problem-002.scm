@@ -11,7 +11,9 @@ four million, find the sum of the even-valued terms.
 |#
 ;; Answer: 4613732
 
-(import (chicken format) srfi-1)
+(cond-expand
+  (chicken (import (chicken format) srfi-1))
+  (kawa (import (srfi 1))))
 
 (define (fibonacci-numbers< n)
   (define (fib-tail fibn-2 fibn-1 fib-lst)
@@ -26,7 +28,7 @@ four million, find the sum of the even-valued terms.
   (filter even? (fibonacci-numbers< n)))
 
 (define (sum lst)
-  (fold + 0 lst))
+  (fold-right + 0 lst))
 
 (define answer-002
   (sum (even-fibonacci-numbers< 4000000)))

@@ -7,7 +7,7 @@ What is the largest prime factor of the number 600851475143?
 |#
 ;; Answer: 6857
 
-(import (chicken format))
+(import (chicken format) matchable)
 
 (define (divides? n m)
   (zero? (remainder n m)))
@@ -22,6 +22,6 @@ What is the largest prime factor of the number 600851475143?
 (define answer-003 (largest-prime-factor 600851475143))
 
 (define (main)
-  (display (format "Problem 3 answer: ~a~%" answer-003)))
+  (display (format #t "Problem 3 answer: ~a~%" answer-003)))
 
 (main)

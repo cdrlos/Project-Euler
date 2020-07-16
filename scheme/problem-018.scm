@@ -1,8 +1,10 @@
-#|
-Maximum path sum I
-
+|#
 Problem 18
 |#
+
+(cond-expand
+  (chicken (import (chicken format) (chicken string)))
+  (kawa (import (kawa regex))))
 
 (define (string->integer str)
   (let ((s (open-input-string str)))
@@ -29,28 +31,28 @@ Problem 18
                         (cons (string->integer (car ints)) out2))))))))
 
 (define (maximum-path-sum upturned-tree)
-  (let loop-0 [(pruned-tree (cdr upturned-tree))
-               (path-sums (car upturned-tree))]
+  (let loop-0 ((pruned-tree (cdr upturned-tree))
+               (path-sums (car upturned-tree)))
     (if (null? pruned-tree)
         (car path-sums)
-        (let loop-1 [(current-values path-sums)
-                     (best-values '())]
-          (cond [(null? (cdr current-values))
+        (let loop-1 ((current-values path-sums)
+                     (best-values '()))
+          (cond ((null? (cdr current-values))
                  (loop-0 (cdr pruned-tree)
-                         (let loop-2 [(xs (car pruned-tree))
+                         (let loop-2 ((xs (car pruned-tree))
                                       (ys (reverse best-values))
-                                      (zs '())]
+                                      (zs '()))
                            (if (null? xs)
                                (reverse zs)
                                (loop-2 (cdr xs)
                                        (cdr ys)
-                                       (cons (+ (car xs) (car ys)) zs)))))]
-                [(> (car current-values)
+                                       (cons (+ (car xs) (car ys)) zs))))))
+                ((> (car current-values)
                     (cadr current-values))
                  (loop-1 (cdr current-values)
-                         (cons (car current-values) best-values))]
-                [else (loop-1 (cdr current-values)
-                              (cons (cadr current-values) best-values))])))))
+                         (cons (car current-values) best-values)))
+                (else (loop-1 (cdr current-values)
+                              (cons (cadr current-values) best-values))))))))
 
 (define answer-018
   (maximum-path-sum (read-integer-triangle "problem-018-data.txt")))
