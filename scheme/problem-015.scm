@@ -8,8 +8,6 @@ the right and down, there are exactly 6 routes to the bottom right corner.
 How many such routes are there through a 20×20 grid?
 |#
 
-(import (chicken format))
-
 (define (partial-factorial start stop)
   (let loop ((i start)
              (p 1))

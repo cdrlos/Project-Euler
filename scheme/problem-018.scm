@@ -2,10 +2,6 @@
 Problem 18
 |#
 
-(cond-expand
-  (chicken (import (chicken format) (chicken string)))
-  (kawa (import (kawa regex))))
-
 (define (string->integer str)
   (let ((s (open-input-string str)))
     (let loop ((c (read-char s))

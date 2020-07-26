@@ -4,8 +4,7 @@ Number letter counts
 Problem 17
 |#
 
-(use-modules (ice-9 match)
-             (srfi srfi-1))
+(import matchable)
 
 (define (range . args)
   (define (range-tail start stop step collect)

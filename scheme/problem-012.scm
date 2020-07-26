@@ -24,8 +24,6 @@ What is the value of the first triangle number to have over five hundred
 divisors?
 |#
 
-(import (chicken format))
-
 (define (triangular n)
   (/ (* n (+ n 1)) 2))
 

@@ -30,8 +30,6 @@ Find the thirteen adjacent digits in the 1000-digit number that have the
 greatest product. What is the value of this product?
 |#
 
-(import (chicken format))
-
 (define (reverse-args f)
   (lambda (a b)
     (f b a)))

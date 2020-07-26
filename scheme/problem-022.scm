@@ -2,7 +2,7 @@
 Problem 22
 |#
 
-(import (chicken format) (chicken io) (chicken sort) (chicken string) srfi-1)
+(import srfi-1)
 
 (define (score-char char)
   (if (char=? char #\")
@@ -11,20 +11,20 @@ Problem 22
                (char->integer #\A)))))
 
 (define (score-string str)
-  (let [(ip (open-input-string str))]
-    (let loop [(score 0)
-               (char (read-char ip))]
+  (let ((ip (open-input-string str)))
+    (let loop ((score 0)
+               (char (read-char ip)))
       (if (eof-object? char)
           score
           (loop (+ score (score-char char)) (read-char ip))))))
 
 (define answer-022
-  (let* [(ip (open-input-file "p022_names.txt"))
+  (let* ((ip (open-input-file "dat/p022_names.txt"))
          (str (read-line ip))
-         (sorted-names (sort (string-split str "\",") string<=?))]
-    (let loop [(remaining-names sorted-names)
+         (sorted-names (sort (string-split str "\",") string<=?)))
+    (let loop ((remaining-names sorted-names)
                (cummulative-score 0)
-               (name-index 1)]
+               (name-index 1))
       (if (null? remaining-names)
           cummulative-score
           (loop (cdr remaining-names)

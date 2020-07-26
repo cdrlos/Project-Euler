@@ -13,8 +13,6 @@ Hence the difference between the sum of the squares of the first ten natural num
 Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
 |#
 
-(import (chicken format))
-
 (define (square x)
   (* x x))
 

@@ -1,7 +1,8 @@
-'''
+"""
 Largest palindrome product
 Problem 4
-'''
+"""
+
 
 def is_palindrome(num):
     rev = 0

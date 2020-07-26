@@ -2,8 +2,6 @@
 Problem 14
 |#
 
-(import (chicken format))
-
 (define (collatz-chain-length n)
   (let loop ((c 1)
              (m n))

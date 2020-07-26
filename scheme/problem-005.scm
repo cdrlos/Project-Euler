@@ -9,7 +9,7 @@ What is the smallest positive number that is evenly divisible by all of the
 numbers from 1 to 20?
 |#
 
-(import (chicken format) matchable srfi-1)
+(import srfi-1 matchable)
 
 (define (range . args)
   (define (range-tail start stop step collect)

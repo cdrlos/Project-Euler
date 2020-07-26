@@ -8,17 +8,17 @@ the 6th prime is 13.
 What is the 10 001st prime number?
 |#
 
-(import (chicken format))
+(import srfi-1)
 
 ;; Naive prime-number predicate
 (define (prime? n)
-  (cond ((<= n 1) #f)
-        ((= n 2) #t)
-        (else
+  (cond [(<= n 1) #f]
+        [(= n 2) #t]
+        [else
          (let loop ((i 2))
            (cond ((zero? (remainder n i)) #f)
                  ((> (* i i) n) #t)
-                 (else (loop (+ i 1))))))))
+                 (else (loop (+ i 1)))))]))
 
 ;; Slow prime number generator
 (define (prime n)

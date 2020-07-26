@@ -2,10 +2,7 @@
 Problem 23
 |#
 
-(cond-expand
-  (chicken (import (chicken format) srfi-1))
-  (kawa (require 'srfi-1))
-  (else nil))
+(import srfi-1)
 
 (define (is-abundant? n)
   (let loop ((i 1)
