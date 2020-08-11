@@ -1,11 +1,6 @@
-#|
-Power digit sum
-Problem 16
+;;; Problem 16 solution
 
-215 = 32768 and the sum of its digits is 3 + 2 + 7 + 6 + 8 = 26.
-
-What is the sum of the digits of the number 21000?
-|#
+(use-modules (ice-9 format))
 
 (define (sum-of-digits n)
   (let loop ((m n)

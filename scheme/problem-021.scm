@@ -1,8 +1,6 @@
-#|
-Problem 21
-|#
+;;; Problem 21 solution
 
-(import srfi-1)
+(use-modules (ice-9 format))
 
 (define (divides? x y)
   (zero? (remainder x y)))

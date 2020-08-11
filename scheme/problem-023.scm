@@ -1,8 +1,6 @@
-#|
-Problem 23
-|#
+;;; Problem 23
 
-(import srfi-1)
+(use-modules (ice-9 format))
 
 (define (is-abundant? n)
   (let loop ((i 1)

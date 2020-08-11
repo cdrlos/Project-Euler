@@ -1,13 +1,4 @@
-#|
-Large sum
-Problem 13
-|#
-
-#lang typed/racket
-
-(: 100-50-digit-numbers String)
-(define 100-50-digit-numbers
-"37107287533902102798797998220837590246510135740250
+37107287533902102798797998220837590246510135740250
 46376937677490009712648124896970078050417018260538
 74324986199524741059474233309513058123726617309629
 91942213363574161572522430563301811072406154908250
@@ -106,35 +97,4 @@ Problem 13
 77158542502016545090413245809786882778948721859617
 72107838435069186155435662884062257473692284509516
 20849603980134001723930671666823555245252804609722
-53503534226472524250874054075591789781264330331690")
-
-(: num-char->num  (-> Char Integer))
-(define (num-char->num c)
-  (- (char->integer c) (char->integer #\0)))
-
-(: num-string->num (-> String Integer))
-(define (num-string->num str)
-  (let ([n : Integer (string-length str)])
-    (let helper ([i : Integer 1]
-                 [d : Char (string-ref str 0)]
-                 [s : Integer 0])
-      (if (= i n)
-          (+ (* s 10) (num-char->num d))
-          (helper (+ i 1) (string-ref str i) (+ (* s 10) (num-char->num d)))))))
-
-(define answer-013 : Integer
-  (let ([ip : Input-Port (open-input-string 100-50-digit-numbers)])
-    (let loop ([l : (Union String EOF) (read-line ip)]
-               [s : Integer 0])
-      (if (eof-object? l)
-          (let loop ([t : Integer s])
-            (if (> (expt 10 10) t)
-                t
-                (loop (quotient t 10))))
-          (loop (read-line ip)
-                (+ s (num-string->num l)))))))
-
-(define (main)
-  (display (format "Problem 13 answer: ~a~%" answer-013)))
-
-(main)
+53503534226472524250874054075591789781264330331690

@@ -1,13 +1,11 @@
-#|
-Problem 22
-|#
+;;; Problem 22 solution
 
-(import srfi-1)
+(use-modules (ice-9 format))
 
 (define (score-char char)
   (if (char=? char #\")
       0
-      (add1 (- (char->integer char)
+      (+ 1 (- (char->integer char)
                (char->integer #\A)))))
 
 (define (score-string str)
@@ -30,7 +28,7 @@ Problem 22
           (loop (cdr remaining-names)
                 (+ cummulative-score (* name-index
                                         (score-string (car remaining-names))))
-                (add1 name-index))))))
+                (+ 1 name-index))))))
 
 (define (main)
   (display (format "Problem 22 answer: ~a~%" answer-022)))

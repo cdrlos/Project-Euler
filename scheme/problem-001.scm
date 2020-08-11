@@ -1,14 +1,10 @@
 #|
-Project Euler Problem 1:
-
-If we list all the natural numbers below 10 that are multiples of 3 or 5, we get
-3, 5, 6 and 9. The sum of these multiples is 23.
-
-Find the sum of all the multiples of 3 or 5 below 1000.
+Problem 1
+SOLUTION: 233168
 |#
-;; Answer: 233168
 
-(import srfi-1 matchable)
+(use-modules (ice-9 match) ; like SML's pattern matching but more powerful
+             (srfi srfi-1))
 
 (define (range . args)
   (define (range-tail start stop step collect)
@@ -28,6 +24,6 @@ Find the sum of all the multiples of 3 or 5 below 1000.
                      (range 1000))))
 
 (define (main)
-  (display (format "Problem 1 answer: ~a~%" answer-001)))
+  (display (format #t "SOLUTION: ~a~%" answer-001)))
 
 (main)

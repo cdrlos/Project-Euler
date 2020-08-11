@@ -1,8 +1,6 @@
-#|
-Number letter counts
+;;; Problem 17 solution
 
-Problem 17
-|#
+(use-modules (ice-9 format))
 
 (import matchable)
 

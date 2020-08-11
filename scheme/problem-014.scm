@@ -1,6 +1,6 @@
-#|
-Problem 14
-|#
+;;; Problem 14 solution
+
+(use-modules (ice-9 format))
 
 (define (collatz-chain-length n)
   (let loop ((c 1)

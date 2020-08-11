@@ -1,5 +1,4 @@
-# Project Euler problem solutions
+# Solutions to Project Euler problems
+These solutions are mostly written in Scheme because that is my favorite programming language. You will also find some translations into C, Java, Python, and Ruby.
 
-A note on the Scheme solutions: they were written for Kawa implementation, version 3.1 specifically.
-
-
+The Scheme solutions were written in Guile as that seems to be the most universally available Scheme implementation on Linux systems. No fancy libraries are used, for the most part.

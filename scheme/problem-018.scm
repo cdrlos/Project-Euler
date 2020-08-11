@@ -1,6 +1,6 @@
-|#
-Problem 18
-|#
+;; Problem 18 solution
+
+(use-modules (ice-9 format))
 
 (define (string->integer str)
   (let ((s (open-input-string str)))

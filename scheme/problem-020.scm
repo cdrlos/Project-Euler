@@ -1,10 +1,6 @@
-#|
-Factorial digit sum
+;;; Problem 20 solution
 
-Problem 20
-|#
-
-(import srfi-1 numbers)
+(use-modules (ice-9 format))
 
 (define (divides? x y)
   (zero? (remainder x y)))

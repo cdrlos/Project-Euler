@@ -1,11 +1,6 @@
-#|
-Summation of primes
-Problem 10
+;;; Problem 10 solution
 
-The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
-
-Find the sum of all the primes below two million.
-|#
+(use-modules (ice-9 format))
 
 ;; From Rosetta code, not my idea
 (define (sieve n)
@@ -28,6 +23,6 @@ Find the sum of all the primes below two million.
   (reduce + 1 (sieve 2000000)))
 
 (define (main)
-	(display (format "Problem 10 answer: ~a~%" answer-010)))
+  (display (format "Problem 10 answer: ~a~%" answer-010)))
 
 (main)
