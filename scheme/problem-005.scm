@@ -9,7 +9,10 @@ What is the smallest positive number that is evenly divisible by all of the
 numbers from 1 to 20?
 |#
 
-(use-modules (ice-9 format) (ice-9 match))
+(cond-expand
+  (chicken-5 (import (chicken format) matchable))
+  (chicken-4 (import format matchable))
+  (guile (use-modules (ice-9 match))))
 
 (define (range . args)
   (define (range-tail start stop step collect)

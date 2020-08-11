@@ -11,7 +11,9 @@ four million, find the sum of the even-valued terms.
 |#
 ;; Answer: 4613732
 
-(use-modules (srfi srfi-1))
+(cond-expand
+  (guile (use-modules (srfi srfi-1)))
+  (chicken (import (chicken format) srfi-1)))
 
 (define (fibonacci-numbers< n)
   (define (fib-tail fibn-2 fibn-1 fib-lst)

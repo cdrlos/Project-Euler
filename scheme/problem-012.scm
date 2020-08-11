@@ -1,4 +1,9 @@
-(use-modules (ice-9 format))
+;; Problem 12
+
+(cond-expand
+  (chicken-5 (import (chicken format)))
+  (chicken-4 (import format))
+  (guile '()))
 
 (define (triangular n)
   (/ (* n (+ n 1)) 2))

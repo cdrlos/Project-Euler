@@ -11,7 +11,10 @@ There exists exactly one Pythagorean triplet for which a + b + c = 1000.
 Find the product abc.
 |#
 
-(use-modules (ice-9 format)))
+(cond-expand
+  (chicken-5 (import (chicken format)))
+  (chicken-4 (import format))
+  (guile '()))
 
 (define (pythagorean? a b c)
   (= (+ (* a a)

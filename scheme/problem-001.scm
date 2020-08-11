@@ -3,8 +3,10 @@ Problem 1
 SOLUTION: 233168
 |#
 
-(use-modules (ice-9 match) ; like SML's pattern matching but more powerful
-             (srfi srfi-1))
+(cond-expand
+  (guile (use-modules (ice-9 match) ; like SML's pattern matching but more powerful
+                      (srfi srfi-1)))
+  (chicken (import (chicken format) matchable srfi-1))
 
 (define (range . args)
   (define (range-tail start stop step collect)

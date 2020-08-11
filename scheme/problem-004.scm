@@ -9,7 +9,10 @@ Find the largest palindrome made from the product of two 3-digit numbers.
 |#
 ;; Answer: 906609
 
-(use-modules (ice-9 format))
+(cond-expand
+  (chicken-5 (import (chicken format)))
+  (chicken-4 (import format))
+  (guile '()))
 
 (define (range . args)
   (define (range-tail start stop step collect)

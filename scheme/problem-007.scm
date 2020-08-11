@@ -1,6 +1,9 @@
 ;;; Problem 7 solution
 
-(use-modules (ice-9 format))
+(cond-expand
+  (chicken-5 (import (chicken format)))
+  (chicken-4 (import format))
+  (guile '()))
 
 ;; Naive prime-number predicate
 (define (prime? n)

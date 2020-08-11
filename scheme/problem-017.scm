@@ -1,8 +1,9 @@
 ;;; Problem 17 solution
 
-(use-modules (ice-9 format))
-
-(import matchable)
+(cond-expand
+  (chicken-5 (import (chicken format) matchable))
+  (chicken-4 (import format matchable))
+  (guile (use-modules (ice-9 match))))
 
 (define (range . args)
   (define (range-tail start stop step collect)

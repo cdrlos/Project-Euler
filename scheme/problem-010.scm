@@ -1,6 +1,9 @@
 ;;; Problem 10 solution
 
-(use-modules (ice-9 format))
+(cond-expand
+  (chicken-5 (import (chicken format)))
+  (chicken-4 (import format))
+  (guile '()))
 
 ;; From Rosetta code, not my idea
 (define (sieve n)

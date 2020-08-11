@@ -1,6 +1,9 @@
 ;;; Problem 8 solutions
 
-(use-modules (ice-9 format))
+(cond-expand
+  (chicken-5 (import (chicken format)))
+  (chicken-4 (import format))
+  (guile '()))
 
 (define (reverse-args f)
   (lambda (a b)

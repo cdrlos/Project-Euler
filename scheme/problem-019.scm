@@ -1,6 +1,9 @@
 ;;; Problem 19 solution
 
-(use-modules (ice-9 format))
+(cond-expand
+  (chicken-5 (import (chicken format)))
+  (chicken-4 (import format))
+  (guile '()))
 
 (define (divides? x y)
   (zero? (remainder x y)))

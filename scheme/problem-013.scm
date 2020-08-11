@@ -1,6 +1,9 @@
 ;;; Problem 13 solution
 
-(use-modules (ice-9 format))
+(cond-expand
+  (chicken-5 (import (chicken format)))
+  (chicken-4 (import format))
+  (guile '()))
 
 (define 100-50-digit-numbers
 "37107287533902102798797998220837590246510135740250

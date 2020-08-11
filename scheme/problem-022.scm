@@ -1,6 +1,9 @@
 ;;; Problem 22 solution
 
-(use-modules (ice-9 format))
+(cond-expand
+  (chicken-5 (import (chicken format)))
+  (chicken-4 (import format))
+  (guile '()))
 
 (define (score-char char)
   (if (char=? char #\")

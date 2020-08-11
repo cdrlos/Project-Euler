@@ -1,6 +1,9 @@
 ;;; Problem 15 solution
 
-(use-modules (ice-9 format))
+(cond-expand
+  (chicken-5 (import (chicken format)))
+  (chicken-4 (import format))
+  (guile '()))
 
 (define (partial-factorial start stop)
   (let loop ((i start)

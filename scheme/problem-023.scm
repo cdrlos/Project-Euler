@@ -1,6 +1,9 @@
 ;;; Problem 23
 
-(use-modules (ice-9 format))
+(cond-expand
+  (chicken-5 (import (chicken format)))
+  (chicken-4 (import format))
+  (guile '()))
 
 (define (is-abundant? n)
   (let loop ((i 1)
