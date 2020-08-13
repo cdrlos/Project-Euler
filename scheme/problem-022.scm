@@ -1,8 +1,8 @@
 ;;; Problem 22 solution
 
 (cond-expand
+  (chicken-4 '())
   (chicken-5 (import (chicken format)))
-  (chicken-4 (import format))
   (guile '()))
 
 (define (score-char char)
@@ -20,7 +20,7 @@
           (loop (+ score (score-char char)) (read-char ip))))))
 
 (define answer-022
-  (let* ((ip (open-input-file "dat/p022_names.txt"))
+  (let* ((ip (open-input-file "../data/p022_names.txt"))
          (str (read-line ip))
          (sorted-names (sort (string-split str "\",") string<=?)))
     (let loop ((remaining-names sorted-names)

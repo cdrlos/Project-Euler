@@ -14,8 +14,8 @@ Find the difference between the sum of the squares of the first one hundred natu
 |#
 
 (cond-expand
+  (chicken-4 '())
   (chicken-5 (import (chicken format)))
-  (chicken-4 (import format))
   (guile '()))
 
 (define (square x)

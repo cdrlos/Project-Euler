@@ -10,8 +10,8 @@ numbers from 1 to 20?
 |#
 
 (cond-expand
+  (chicken-4 (import matchable))
   (chicken-5 (import (chicken format) matchable))
-  (chicken-4 (import format matchable))
   (guile (use-modules (ice-9 match))))
 
 (define (range . args)

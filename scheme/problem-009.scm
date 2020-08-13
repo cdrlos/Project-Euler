@@ -12,8 +12,8 @@ Find the product abc.
 |#
 
 (cond-expand
+  (chicken-4 '())
   (chicken-5 (import (chicken format)))
-  (chicken-4 (import format))
   (guile '()))
 
 (define (pythagorean? a b c)

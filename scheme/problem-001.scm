@@ -4,9 +4,9 @@ SOLUTION: 233168
 |#
 
 (cond-expand
-  (guile (use-modules (ice-9 match) ; like SML's pattern matching but more powerful
-                      (srfi srfi-1)))
-  (chicken (import (chicken format) matchable srfi-1))
+  (chicken-4 (import matchable srfi-1))
+  (chicken-5 (import (chicken format) matchable srfi-1))
+  (guile (use-modules (ice-9 match) (srfi srfi-1))))
 
 (define (range . args)
   (define (range-tail start stop step collect)

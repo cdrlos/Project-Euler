@@ -8,8 +8,8 @@ What is the largest prime factor of the number 600851475143?
 ;; Answer: 6857
 
 (cond-expand
+  (chicken-4 '())
   (chicken-5 (import (chicken format)))
-  (chicken-4 (import format))
   (guile '()))
 
 (define (divides? n m)

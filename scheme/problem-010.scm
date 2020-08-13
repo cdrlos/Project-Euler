@@ -1,8 +1,8 @@
 ;;; Problem 10 solution
 
 (cond-expand
+  (chicken-4 '())
   (chicken-5 (import (chicken format)))
-  (chicken-4 (import format))
   (guile '()))
 
 ;; From Rosetta code, not my idea
