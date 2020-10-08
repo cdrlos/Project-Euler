@@ -1,6 +1,4 @@
-'''
-Problem 3
-'''
+## Problem 3
 
 def is_divisible_by(n, m):
     return 0 == n % m
@@ -17,8 +15,9 @@ def largest_prime_factor(n):
                 largest = largest + 1
         return largest
 
-answer_003 = largest_prime_factor(600851475143)
 
-print("Answer: " + str(answer_003) + "\n")
+sol = largest_prime_factor(600851475143)
 
-## Answer: 6857
+print("SOLUTION: " + str(sol) + "\n")
+
+## SOLUTION: 6857

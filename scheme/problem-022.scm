@@ -1,9 +1,6 @@
 ;;; Problem 22 solution
 
-(cond-expand
-  (chicken-4 '())
-  (chicken-5 (import (chicken format)))
-  (guile '()))
+(import (chezscheme))
 
 (define (score-char char)
   (if (char=? char #\")

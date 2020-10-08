@@ -1,8 +1,12 @@
-;;; Problem 7
+#|
+10001st prime
 
-(import (chezscheme))
+Problem 7
+|#
 
-;; Naive prime-number predicate
+#lang typed/racket
+
+(: prime? (-> Integer Boolean))
 (define (prime? n)
   (cond [(<= n 1) #f]
         [(= n 2) #t]
@@ -12,23 +16,23 @@
                  ((> (* i i) n) #t)
                  (else (loop (+ i 1)))))]))
 
-;; Slow prime number generator
+(: prime (-> Integer Integer))
 (define (prime n)
+  (: helper (-> Integer Integer Integer))
   (define (helper n p)
     (if (zero? n)
         p
-        (let loop ((i (+ p 1)))
+        (let loop ([i (+ p 1)])
           (if (prime? i)
               (helper (- n 1) i)
               (loop (+ i 1))))))
   (helper n 1))
 
+(: answer-007 Integer)
 (define answer-007
   (prime 10001))
 
 (define (main)
-  (display (format "SOLUTION: ~a~%" answer-007)))
+  (display (format "Problem 7 answer: ~a~%" answer-007)))
 
 (main)
-
-;; SOLUTION: 104743

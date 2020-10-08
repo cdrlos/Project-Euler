@@ -1,8 +1,4 @@
-"""
-Largest palindrome product
-Problem 4
-"""
-
+## Problem 4
 
 def is_palindrome(num):
     rev = 0
@@ -13,4 +9,4 @@ def is_palindrome(num):
     return num == rev
 
 
-print("Answer: " + str(answer_004) + "\n")
+print("SOLUTION: " + str(sol) + "\n")

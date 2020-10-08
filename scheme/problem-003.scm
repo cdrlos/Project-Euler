@@ -1,16 +1,6 @@
-#|
-Problem 3:
+;;Problem 3
 
-The prime factors of 13195 are 5, 7, 13 and 29.
-
-What is the largest prime factor of the number 600851475143?
-|#
-;; Answer: 6857
-
-(cond-expand
-  (chicken-4 '())
-  (chicken-5 (import (chicken format)))
-  (guile '()))
+(import (chezscheme))
 
 (define (divides? n m)
   (zero? (remainder n m)))
@@ -25,6 +15,8 @@ What is the largest prime factor of the number 600851475143?
 (define answer-003 (largest-prime-factor 600851475143))
 
 (define (main)
-  (display (format #t "Problem 3 answer: ~a~%" answer-003)))
+  (display (format #t "SOLUTION: ~a~%" answer-003)))
 
 (main)
+
+;; SOLUTION: 6857

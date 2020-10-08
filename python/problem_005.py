@@ -1,4 +1,1 @@
-'''
-Smallest multiple
-Problem 5
-'''
+## Problem 5

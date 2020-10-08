@@ -1,14 +1,20 @@
-;;; Problem 8
+#|
+Largest product in a series
 
-(import (chezscheme))
+Problem 8
+|#
 
-(define (reverse-args f)
-  (lambda (a b)
-    (f b a)))
+#lang typed/racket
 
+(: swap-args (All (a b) (-> (-> a a b) (-> a a b))))
+(define (swap-args f)
+  (lambda (a b) (f b a)))
+
+(: 1000-digit-number Integer)
 (define 1000-digit-number
-  (string->number
-   (reduce (reverse-args string-append) ""
+  (assert
+   (string->number
+    (foldl (swap-args string-append) ""
            (map number->string
                 '(73167176531330624919225119674426574742355349194934
                   96983520312774506326239578318016984801869478851843
@@ -29,18 +35,21 @@
                   07198403850962455444362981230987879927244284909188
                   84580156166097919133875499200524063689912560717606
                   05886116467109405077541002256983155200055935729725
-                  71636269561882670428252483600823257530420752963450)))))
+                  71636269561882670428252483600823257530420752963450))))
+   exact-integer?))
 
+(: integer->list (-> Integer (Listof Integer)))
 (define (integer->list n)
-  (let loop ((i 0)
-             (lst '())
-             (rem n))
+  (let loop ([i 0]
+             [lst : (Listof Integer) '()]
+             [rem n])
     (if (zero? rem)
         lst
         (loop (+ i 1)
               (cons (remainder rem 10) lst)
               (quotient rem 10)))))
 
+(: answer-008 Integer)
 (define answer-008
   (let loop [(i 0)
              (max-product 0)
@@ -49,12 +58,10 @@
         max-product
         (loop (+ i 1)
               (max max-product
-                   (reduce * 1 (take num-list 13)))
+                   (foldl * 1 (take num-list 13)))
               (drop num-list 1)))))
 
 (define (main)
-  (display (format "SOLUTION: ~a~%" answer-008)))
+  (display (format "Problem 8 answer: ~a~%" answer-008)))
 
 (main)
-
-;;

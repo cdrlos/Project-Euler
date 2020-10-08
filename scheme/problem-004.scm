@@ -1,18 +1,7 @@
-#|
-Largest palindrome product
-Problem 4
+;; Problem 4
 
-A palindromic number reads the same both ways. The largest palindrome made from
-the product of two 2-digit numbers is 9009 = 91 × 99.
-
-Find the largest palindrome made from the product of two 3-digit numbers.
-|#
-;; Answer: 906609
-
-(cond-expand
-  (chicken-4 '())
-  (chicken-5 (import (chicken format)))
-  (guile '()))
+(import (chezscheme)
+        (matchable))
 
 (define (range . args)
   (define (range-tail start stop step collect)
@@ -47,9 +36,11 @@ Find the largest palindrome made from the product of two 3-digit numbers.
   (= (palindrome?-rec num 0 num) num))
 
 (define answer-004
-  (fold max 1 (filter palindrome? (products (range 100 999)))))
+  (fold-left max 1 (filter palindrome? (products (range 100 999)))))
 
 (define (main)
-  (display (format "Problem 4 answer: ~a~%" answer-004)))
+  (display (format "SOLUTION: ~a~%" answer-004)))
 
 (main)
+
+;; SOLUTION: 906609

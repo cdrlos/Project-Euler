@@ -1,8 +1,6 @@
-# ignore compiled binaries for CHICKEN, C programs
-*/bin
 
-# Created by https://www.toptal.com/developers/gitignore/api/c,scheme,python,ruby,java
-# Edit at https://www.toptal.com/developers/gitignore?templates=c,scheme,python,ruby,java
+# Created by https://www.toptal.com/developers/gitignore/api/scheme,racket,ruby,python,r,java,c++,c
+# Edit at https://www.toptal.com/developers/gitignore?templates=scheme,racket,ruby,python,r,java,c++,c
 
 ### C ###
 # Prerequisites
@@ -57,6 +55,25 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+### C++ ###
+# Prerequisites
+
+# Compiled Object files
+*.slo
+
+# Precompiled Headers
+
+# Compiled Dynamic libraries
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+
+# Executables
 
 ### Java ###
 # Compiled class file
@@ -135,6 +152,7 @@ coverage.xml
 *.py,cover
 .hypothesis/
 .pytest_cache/
+pytestdebug.log
 
 # Translations
 *.mo
@@ -154,6 +172,7 @@ instance/
 
 # Sphinx documentation
 docs/_build/
+doc/_build/
 
 # PyBuilder
 target/
@@ -193,6 +212,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+pythonenv*
 
 # Spyder project settings
 .spyderproject
@@ -214,6 +234,71 @@ dmypy.json
 
 # pytype static type analyzer
 .pytype/
+
+# profiling data
+.prof
+
+### R ###
+# History files
+.Rhistory
+.Rapp.history
+
+# Session Data files
+.RData
+
+# User-specific files
+.Ruserdata
+
+# Example code in package build process
+*-Ex.R
+
+# Output files from R CMD build
+/*.tar.gz
+
+# Output files from R CMD check
+/*.Rcheck/
+
+# RStudio files
+.Rproj.user/
+
+# produced vignettes
+vignettes/*.html
+vignettes/*.pdf
+
+# OAuth2 token, see https://github.com/hadley/httr/releases/tag/v0.3
+.httr-oauth
+
+# knitr and R markdown default cache directories
+*_cache/
+/cache/
+
+# Temporary files created by R markdown
+*.utf8.md
+*.knit.md
+
+# R Environment Variables
+.Renviron
+
+### R.Bookdown Stack ###
+# R package: bookdown caching files
+/*_files/
+
+### Racket ###
+# gitignore template for the Racket language
+# website: http://www.racket-lang.org/
+
+# DrRacket autosave files
+*.rkt~
+*.rkt.bak
+\#*.rkt#
+\#*.rkt#*#
+
+# Compiled racket bytecode
+compiled/
+*.zo
+
+# Dependency tracking files
+*.dep
 
 ### Ruby ###
 *.gem
@@ -284,4 +369,4 @@ build-iPhoneSimulator/
 *.scm#*
 .#*.scm
 
-# End of https://www.toptal.com/developers/gitignore/api/c,scheme,python,ruby,java
+# End of https://www.toptal.com/developers/gitignore/api/scheme,racket,ruby,python,r,java,c++,c

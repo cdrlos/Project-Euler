@@ -1,9 +1,6 @@
 ;;; Problem 23
 
-(cond-expand
-  (chicken-4 '())
-  (chicken-5 (import (chicken format)))
-  (guile '()))
+(import (chezscheme))
 
 (define (is-abundant? n)
   (let loop ((i 1)

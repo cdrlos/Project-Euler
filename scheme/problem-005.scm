@@ -1,18 +1,7 @@
-#|
-Smallest multiple
-Problem 5
+;; Problem 5
 
-2520 is the smallest number that can be divided by each of the numbers from 1
-to 10 without any remainder.
-
-What is the smallest positive number that is evenly divisible by all of the
-numbers from 1 to 20?
-|#
-
-(cond-expand
-  (chicken-4 (import matchable))
-  (chicken-5 (import (chicken format) matchable))
-  (guile (use-modules (ice-9 match))))
+(import (chezscheme)
+        (matchable))
 
 (define (range . args)
   (define (range-tail start stop step collect)
@@ -40,9 +29,11 @@ numbers from 1 to 20?
   (/ (* m n) (my-gcd m n)))
 
 (define answer-005
-  (fold my-lcm 1 (range 1 21)))
+  (fold-left my-lcm 1 (range 1 21)))
 
 (define (main)
-  (display (format "Problem 5 answer: ~a~%" answer-005)))
+  (display (format "SOLUTION: ~a~%" answer-005)))
 
 (main)
+
+;; SOLUTION: 232792560

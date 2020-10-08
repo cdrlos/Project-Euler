@@ -17,10 +17,10 @@ int main() {
 
   for (int i = 0; i <= 1000; ++i) {
     if (ismultiple(i, 3) || ismultiple(i, 5)) {
-      answer_001 += i;
+      sol += i;
     }
   }
-  printf("Answer: %i\n", answer_001);
+  printf("SOLUTION: %i\n", sol);
 }
 
 // Answer: 234168

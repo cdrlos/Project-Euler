@@ -1,16 +1,14 @@
-'''
-Problem 1
-'''
+## Problem 1
 
-def is_multiple(n,m):
+def is_multiple(n, m):
     return n % m == 0
 
 solution = 0
 
 for x in range(1000):
-    if (is_multiple(x,3) or is_multiple(x,5)):
+    if is_multiple(x, 3) or is_multiple(x, 5):
         solution += x
 
-print("Answer: " + str(solution) + "\n")
+print("SOLUTION: " + str(solution) + "\n")
 
 ## Answer: 233168

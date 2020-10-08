@@ -1,12 +1,6 @@
-#|
-Problem 1
-SOLUTION: 233168
-|#
-
-(cond-expand
-  (chicken-4 (import matchable srfi-1))
-  (chicken-5 (import (chicken format) matchable srfi-1))
-  (guile (use-modules (ice-9 match) (srfi srfi-1))))
+;; Problem 1
+(import (chezscheme)
+        (matchable))
 
 (define (range . args)
   (define (range-tail start stop step collect)
@@ -21,7 +15,7 @@ SOLUTION: 233168
       ((x y z l) (range-tail x y z l))))
 
 (define answer-001
-  (fold + 0 (filter (lambda (n) (or (zero? (remainder n 3))
+  (fold-left + 0 (filter (lambda (n) (or (zero? (remainder n 3))
                                     (zero? (remainder n 5))))
                      (range 1000))))
 
@@ -29,3 +23,4 @@ SOLUTION: 233168
   (display (format #t "SOLUTION: ~a~%" answer-001)))
 
 (main)
+;; SOLUTION:

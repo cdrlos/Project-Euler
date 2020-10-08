@@ -1,4 +1,1 @@
-'''
-Sum square difference
-Problem 6
-'''
+## Problem 6
