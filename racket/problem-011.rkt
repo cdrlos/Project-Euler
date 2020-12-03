@@ -120,11 +120,9 @@ Problem 11
                    (max diag-up (product-diag-up g i j k))
                    (max diag-dwn (product-diag-dwn g i j k))))))))
 
-(: answer-011 Integer)
+(: answer Integer)
 (define answer-011
   (max-product grid 4))
 
-(define (main)
-  (display (format "Problem 11 answer: ~a~%" answer-011)))
-
-(main)
+(module+ main
+  (display (format "Answer: ~a~%" answer)))

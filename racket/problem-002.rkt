@@ -18,11 +18,9 @@ Problem 2
 (define (even-fibonacci-numbers< n)
   (filter even? (fibonacci-numbers< n)))
 
-(: answer-002 Integer)
-(define answer-002
+(: answer Integer)
+(define answer
   (foldl + 0 (even-fibonacci-numbers< 4000000)))
 
-(define (main)
-  (display (format "Problem 2 answer: ~a~%" answer-002)))
-
-(main)
+(module+ main
+  (display (format "Answer: ~a~%" answer)))

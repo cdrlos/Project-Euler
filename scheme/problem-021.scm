@@ -1,10 +1,5 @@
 ;;; Problem 21 solution
 
-(cond-expand
-  (chicken-4 '())
-  (chicken-5 (import (chicken format)))
-  (guile '()))
-
 (define (divides? x y)
   (zero? (remainder x y)))
 
@@ -19,7 +14,7 @@
         (list x y)
         '())))
 
-(define answer-021
+(define sol
   (let loop ((i 1)
              (amicable-numbers '()))
     (cond ((>= i 10000) (apply + amicable-numbers))
@@ -28,6 +23,6 @@
                       (append amicable-numbers (amicable-pair i)))))))
 
 (define (main)
-  (display (format "Problem 21 answer: ~a~%" answer-021)))
+  (display (format "SOLUTION: ~a~%" sol)))
 
 (main)

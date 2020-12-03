@@ -12,10 +12,8 @@ Problem 16
         (let ([r (remainder m 10)] [q (quotient m 10)])
           (loop q (+ s r))))))
 
-(define answer-016 : Integer
+(define answer : Integer
   (sum-of-digits (expt 2 1000)))
 
-(define (main)
-  (display (format "Problem 16 answer: ~a~%" answer-016)))
-
-(main)
+(module+ main
+  (display (format "Answer: ~a~%" answer)))

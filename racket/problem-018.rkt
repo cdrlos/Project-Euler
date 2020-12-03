@@ -6,7 +6,6 @@ Problem 18
 #lang racket/base
 (require racket/string)
 
-
 (define (string->integer str)
   (let [(s (open-input-string str))]
     (let loop ((c (read-char s))
@@ -55,10 +54,8 @@ Problem 18
                 [else (loop-1 (cdr current-values)
                               (cons (cadr current-values) best-values))])))))
 
-(define answer-018
+(define answer
   (maximum-path-sum (read-integer-triangle "problem-018-data.txt")))
 
-(define (main)
-  (display (format "Problem 18 answer: ~a~%" answer-018)))
-
-(main)
+(module+ main
+  (display (format "Answer: ~a~%" answer)))

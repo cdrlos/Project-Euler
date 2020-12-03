@@ -15,12 +15,10 @@ Problem 6
         (loop (+ i 1)
               (+ acc (f i))))))
 
-(: answer-006 Integer)
-(define answer-006
+(: answer Integer)
+(define answer
   (- (expt (series>= (lambda (x) x) 100) 2)
      (series>= (lambda (x) (* x x)) 100)))
 
-(define (main)
-  (display (format "Problem 6 answer: ~a~%" answer-006)))
-
-(main)
+(module+ main
+  (display (format "Answer: ~a~%" answer)))

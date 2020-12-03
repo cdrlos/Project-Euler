@@ -61,12 +61,10 @@ Problem 17
              (loop (read-char ip) i)}
             [else (loop (read-char ip) (+ i 1))]))))
 
-(define answer-017 : Integer
+(define answer : Integer
   (foldl + 0
           (map count-letters
                (map number->word (range 1 1001)))))
 
-(define (main)
-  (display (format "Problem 17 answer: ~a~%" answer-017)))
-
-(main)
+(module+ main
+  (display (format "Answer: ~a~%" answer)))

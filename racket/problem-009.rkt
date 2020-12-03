@@ -22,14 +22,12 @@ Problem 9
             [else (helper a (+ b 1) (cons (list a b c) ts))])))
   (helper 1 2 '()))
 
-(: answer-009 (Listof Integer))
-(define answer-009
+(: answer (Listof Integer))
+(define answer
   (map (lambda (xs) (foldl * 1 xs))
        (filter (lambda ([xs : (Listof (Listof Integer))])
                  (apply pythagorean? xs))
                (triplets-with-perimeter= 1000))))
 
-(define (main)
-  (display (format "Problem 9 answer: ~a~%" answer-009)))
-
-(main)
+(module+ main
+  (display (format "Answer: ~a~%" answer)))

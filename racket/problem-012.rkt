@@ -24,15 +24,13 @@ Problem 12
                               (loop (+ i 1) (+ d 2))))
           (else (loop (+ i 1) d)))))
 
-(: answer-012 Integer)
-(define answer-012
+(: answer Integer)
+(define answer
   (let loop ((i 1)
              (answer (triangular 0)))
     (if (> (number-of-divisors answer) 500)
         answer
         (loop (+ i 1) (triangular i)))))
 
-(define (main)
-  (display (format "Problem 12 answer: ~a" answer-012)))
-
-(main)
+(module+ main
+  (display (format "Answer: ~a~%" answer)))

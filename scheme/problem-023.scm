@@ -1,7 +1,5 @@
 ;;; Problem 23
 
-(import (chezscheme))
-
 (define (is-abundant? n)
   (let loop ((i 1)
              (count 0))
@@ -25,11 +23,11 @@
               (xss (cdr xs)))
           (loop xss (append ys (map (lambda (z) (+ xx z)) xs)))))))
 
-(define answer-023
+(define sol
   (let ((abd (sum-of-abundant< (quotient 28123 2))))
     (fold (lambda (x y) (- x y)) (* 28123 14062) abd)))
 
 (define (main)
-  (display (format "Problem 23 answer: ~a~%" answer-023)))
+  (display (format "SOLUTION: ~a~%" sol)))
 
 (main)

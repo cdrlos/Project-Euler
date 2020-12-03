@@ -19,11 +19,9 @@ Problem 10
              #:when (vector-ref primes n))
     n))
 
-(: answer-010 Integer)
+(: answer Integer)
 (define answer-010
   (foldl + 1 (sieve 2000000)))
 
-(define (main)
-  (display (format "Problem 10 answer: ~a~%" answer-010)))
-
-(main)
+(module+ main
+  (display (format "Answer: ~a~%" answer)))

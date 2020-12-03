@@ -49,8 +49,8 @@ Problem 8
               (cons (remainder rem 10) lst)
               (quotient rem 10)))))
 
-(: answer-008 Integer)
-(define answer-008
+(: answer Integer)
+(define answer
   (let loop [(i 0)
              (max-product 0)
              (num-list (integer->list 1000-digit-number))]
@@ -61,7 +61,5 @@ Problem 8
                    (foldl * 1 (take num-list 13)))
               (drop num-list 1)))))
 
-(define (main)
-  (display (format "Problem 8 answer: ~a~%" answer-008)))
-
-(main)
+(module+ main
+  (display (format "Answer: ~a~%" answer)))

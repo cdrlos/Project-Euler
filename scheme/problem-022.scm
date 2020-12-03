@@ -1,6 +1,6 @@
 ;;; Problem 22 solution
 
-(import (chezscheme))
+(import matchable)
 
 (define (score-char char)
   (if (char=? char #\")

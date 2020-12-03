@@ -12,7 +12,7 @@ Problem 14
           [(even? m) (loop (+ c 1) (quotient m 2))]
           [else (loop (+ c 1) (+ 1 (* 3 m)))])))
 
-(define answer-014 : Integer
+(define answer : Integer
   (let loop ([i : Integer 1]
              [longest-chain-length-so-far : Integer 1]
              [starting-number-with-longest-chain : Integer 1])
@@ -25,7 +25,5 @@ Problem 14
                     longest-chain-length-so-far
                     starting-number-with-longest-chain))))))
 
-(define (main) : Void
-  (display (format "Problem 14 answer: ~a~%" answer-014)))
-
-(main)
+(module+ main
+  (display (format "Answer: ~a~%" answer)))

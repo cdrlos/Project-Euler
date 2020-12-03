@@ -28,11 +28,9 @@ Problem 7
               (loop (+ i 1))))))
   (helper n 1))
 
-(: answer-007 Integer)
-(define answer-007
+(: answer Integer)
+(define answer
   (prime 10001))
 
-(define (main)
-  (display (format "Problem 7 answer: ~a~%" answer-007)))
-
-(main)
+(module+ main
+  (display (format "Answer: ~a~%" answer)))

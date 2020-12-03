@@ -24,11 +24,9 @@ Problem 4
         (loop (+ (* 10 rev) (remainder tmp 10))
               (quotient tmp 10)))))
 
-(: answer-004 Integer)
-(define answer-004
+(: answer Integer)
+(define answer
   (foldl max 1 (filter palindrome? (all-possible-products (range 100 999)))))
 
-(define (main)
-  (display (format "Answer: ~a~%" answer-004)))
-
-(main)
+(module+ main
+  (display (format "Answer: ~a~%" answer)))

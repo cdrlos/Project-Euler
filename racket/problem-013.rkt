@@ -122,7 +122,7 @@ Problem 13
           (+ (* s 10) (num-char->num d))
           (helper (+ i 1) (string-ref str i) (+ (* s 10) (num-char->num d)))))))
 
-(define answer-013 : Integer
+(define answer : Integer
   (let ([ip : Input-Port (open-input-string 100-50-digit-numbers)])
     (let loop ([l : (Union String EOF) (read-line ip)]
                [s : Integer 0])
@@ -134,7 +134,5 @@ Problem 13
           (loop (read-line ip)
                 (+ s (num-string->num l)))))))
 
-(define (main)
-  (display (format "Problem 13 answer: ~a~%" answer-013)))
-
-(main)
+(module+ main
+  (display (format "Answer: ~a~%" answer)))

@@ -16,10 +16,8 @@ Problem 15
 (define (square-grid-walks [n : Integer]) : Integer
   (quotient (partial-factorial (+ n 1) (* 2 n)) (partial-factorial 1 n)))
 
-(define answer-015 : Integer
+(define answer : Integer
   (square-grid-walks 20))
 
-(define (main)
-  (display (format "Problem 15 answer: ~a~%" answer-015)))
-
-(main)
+(module+ main
+  (display (format "Answer: ~a~%" answer)))
